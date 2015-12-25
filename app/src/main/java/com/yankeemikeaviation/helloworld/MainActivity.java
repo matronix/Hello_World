@@ -49,4 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    public void onYesButtonClick(View view) {
+    }
+
+    public void onNoButtonClick(View view) {
+    }
 }
