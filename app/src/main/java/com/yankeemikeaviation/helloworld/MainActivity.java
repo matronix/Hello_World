@@ -8,13 +8,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 //Just a test line
+
+    // Create the components here that you want to use in your code
+
+    private Button answerYesButton, answerNoButton;
+    private EditText usersNameEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize components here
+
+        answerYesButton = (Button) findViewById(R.id.answer_yes_button);
+        answerNoButton = (Button) findViewById(R.id.answer_no_button);
+        usersNameEditText = (EditText) findViewById(R.id.users_name_edit_text);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onYesButtonClick(View view) {
+
+        String usersName = String.valueOf(usersNameEditText.getText());
+        String yourYesResponse = "That is great" + usersName;
+        Toast.makeText(this, yourYesResponse, Toast.LENGTH_SHORT).show();
+
     }
 
     public void onNoButtonClick(View view) {
